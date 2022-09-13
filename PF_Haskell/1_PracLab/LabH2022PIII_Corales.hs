@@ -4,25 +4,25 @@ module LaboratorioHaskell where
 
 -- Recursion 
 
-mapTupR :: (a -> b) -> (c -> d)-> [(a,c)] -> [(b,d)]
+mapTupR :: (a -> b) -> (c -> d) -> [(a,c)] -> [(b,d)]
 mapTupR _ _ [] = []
 mapTupR f g (x:xs) = (f (fst x), g (snd x)) : mapTupR f g xs
 
 -- Recursion con acumulador
 
-mapTupRA :: (a -> b) -> (c -> d)-> [(a,c)] -> [(b,d)]
+mapTupRA :: (a -> b) -> (c -> d) -> [(a,c)] -> [(b,d)]
 mapTupRA f g ys = mapTupRA_aux f g ys []
       where mapTupRA_aux _ _ [] acc = acc
             mapTupRA_aux f g (x:xs) acc = mapTupRA_aux f g xs (acc ++ [(f (fst x), g (snd x))])
 
 -- Foldr (a -> b -> b) -> b -> [a] -> b
 
-mapTupfr :: (a -> b) -> (c -> d)-> [(a,c)] -> [(b,d)]
+mapTupfr :: (a -> b) -> (c -> d) -> [(a,c)] -> [(b,d)]
 mapTupfr f g = foldr (\x xs -> (f (fst x), g (snd x)) : xs) []
 
 -- Foldl (a -> b -> a) -> a -> [b] -> a
 
-mapTupfl :: (a -> b) -> (c -> d)-> [(a,c)] -> [(b,d)]
+mapTupfl :: (a -> b) -> (c -> d) -> [(a,c)] -> [(b,d)]
 mapTupfl f g ys =  foldl (\acc xs -> acc ++ [(f (fst xs), g (snd xs))]) [] ys -- VER
 
 
@@ -63,7 +63,7 @@ filteTuprfl f g ys = foldl (\acc xs -> if f (fst xs) && g (snd xs)
 
 -- Recursion
 
-allTupR:: Int -> [(a,b)] -> [(a,b)]
+allTupR :: Int -> [(a,b)] -> [(a,b)]
 allTupR n _ | n <= 0 = [] 
 allTupR _ [] = []
 allTupR n (x:xs) = x : allTupR  (n - 1) xs
