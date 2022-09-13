@@ -46,3 +46,5 @@ elimElFolfl n ys = foldl (\acc x -> if n == x then acc else acc ++ [x]) [] ys
 fun :: [(a,b)] -> ([a],[b])
 fun lis = foldl (aux) ([],[]) lis
     where aux (a,b) (x,y) = (a ++ [x], b ++ [y])
+
+
