@@ -1,0 +1,5 @@
+Carrera: Ingeniería en Informática
+
+Materia: Programación III - 2022
+
+Documentación generada con Haddock <http://www.haskell.org/haddock/doc/html/index.html>; para el práctico de programación declarativa funcional en lenguaje Haskell.
