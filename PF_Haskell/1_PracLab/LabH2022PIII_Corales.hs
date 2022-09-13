@@ -54,8 +54,8 @@ filterTupfr f g = foldr (\x xs -> if f (fst x) && g (snd x)
 
 -- Foldl (a -> b -> a) -> a -> [b] -> a
 
-filteTuprfl :: (a -> Bool) -> (b -> Bool) -> [(a,b)] -> [(a,b)]
-filteTuprfl f g ys = foldl (\acc xs -> if f (fst xs) && g (snd xs) 
+filterTupfl :: (a -> Bool) -> (b -> Bool) -> [(a,b)] -> [(a,b)]
+filterTupfl f g ys = foldl (\acc xs -> if f (fst xs) && g (snd xs) 
                                        then acc ++ [((fst xs, snd xs))] 
                                        else acc) [] ys
 
@@ -175,6 +175,8 @@ pganancia :: ItemStock -> PGan
 pganancia (cod,item,marca,rubro,prov,umed,cant,cmin,cmax,preciou,pgan) = pgan
 
 -- Ejercicio 4
+
+-- map listaItems tabla1S
 
 listaItems :: ItemStock -> (CodItem, Item, Marca, Rubro)
 listaItems (cod,item,marca,rubro,prov,umed,cant,cmin,cmax,preciou,pgan) = (cod,item,marca,rubro) 
