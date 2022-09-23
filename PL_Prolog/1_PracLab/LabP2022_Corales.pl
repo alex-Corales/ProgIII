@@ -33,7 +33,12 @@ primero([X|_], X).
         X = [a|_1684]
 */
 
-//Ejercicio 2.2/
+/Ejercicio 2.2/
 
 cola([],0).
 cola([_|XS], XS).
+
+/Ejercicio 2.3/
+
+cons(0,[],[]).
+cons(X,L1,L2) :- L2 = [X|L1].
